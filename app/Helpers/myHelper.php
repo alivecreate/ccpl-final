@@ -4,7 +4,7 @@ use App\Models\admin\Category;
 use App\Models\admin\Banner;
 
 use Illuminate\Support\Facades\File;
-// use File;
+// use File; test helper
 
 // dd(ini_get('post_max_size'));
 function getMaxUploadSide()
