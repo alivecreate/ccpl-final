@@ -1,5 +1,5 @@
  <div class="col-sm-6">
-                    <h5 class="bg-dark pl-4 pr-4">SEO CONTENTS </h5>
+                    <h5 class="bg-dark pl-4 pr-4">SEO CONTENTS</h5>
                     <div class="col-sm-12">
                       <label  class="text-danger" class="" for="meta_title">SEO Title</label>
                       <input type="text" class="form-control" name="meta_title" 
@@ -59,7 +59,7 @@
                     </div>
 
                     <div class="col-sm-12">
-                      <label  class="" for="canonical_url">Canonical URL</label>
+                      <label  class="" for="canonical_url">Canonical URL </label>
                       <input type="text" class="form-control" name="canonical_url" 
                         placeholder="Canonical URL" 
                         value="@if(old('canonical_url')){{old('canonical_url')}}@else{{$pageData->canonical_url}}@endif">
