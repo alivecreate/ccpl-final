@@ -16,6 +16,7 @@ class CreateTaskStatusTable extends Migration
         Schema::create('task_status', function (Blueprint $table) {
             $table->id();
             
+            $table->text('item_no')->nullable();
             $table->text('status')->nullable();
             $table->text('message')->nullable();
             

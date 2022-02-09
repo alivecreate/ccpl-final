@@ -16,6 +16,7 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
 
             $table->id();
+            $table->text('item_no')->nullable();
             $table->text('name')->nullable();
             $table->text('short_description')->nullable();
             $table->text('full_description')->nullable();
@@ -29,10 +30,14 @@ class CreateProductsTable extends Migration
             $table->text('meta_title')->nullable();
             $table->longText('meta_keyword')->nullable();
             $table->longText('meta_description')->nullable();
+            $table->longText('youtube_embed')->nullable();
             
+            $table->text('search_index')->nullable();
+            $table->text('search_follow')->nullable();
+            $table->text('canonical_url')->nullable();
 
             $table->unsignedBigInteger('category_id')->nullable();
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('set null');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
           
             $table->unsignedBigInteger('admin_id')->nullable();
             $table->foreign('admin_id')->references('id')->on('admins')->onDelete('set null');

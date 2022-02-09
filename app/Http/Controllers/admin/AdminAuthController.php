@@ -60,7 +60,7 @@ class AdminAuthController extends Controller
                 $request->session()->put('LoggedUser', $userInfo);
                 return redirect(route('admin.dashboard'));
             }else{
-                return back()->with('fail', 'Incorrectt Passord');
+                return back()->with('fail', 'Incorrectt Password');
             }
         }
 

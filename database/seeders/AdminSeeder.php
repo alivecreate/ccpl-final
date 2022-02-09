@@ -13,17 +13,14 @@ class AdminSeeder extends Seeder
      *
      * @return void
      */
-    
-     
+
+
     public function run()
     {
         DB::table('admins')->insert([
             'name' => 'Admin',
-            'email' => 'myalivecreate@gmail.com',
+            'email' => 'admin@gmail.com',
             'password' => Hash::make('123123'),
         ]);
-
-        
-
     }
 }

@@ -16,13 +16,12 @@ class CreateClientsTable extends Migration
         Schema::create('clients', function (Blueprint $table) {
             
             $table->id();
-            $table->text('name');
-            $table->text('logo');
+            $table->text('item_no')->nullable();
+            $table->text('name')->nullable();
+            $table->text('logo')->nullable();
             $table->text('note')->nullable();
             $table->integer('status')->default(1);
 
-            $table->unsignedBigInteger('admin_id')->nullable();
-            $table->foreign('admin_id')->references('id')->on('admins');
             $table->timestamps();
             
         });

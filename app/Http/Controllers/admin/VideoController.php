@@ -5,18 +5,20 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\admin\Video;
+use File;
+use DB;
 
 class VideoController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response 
      */
     public function index()
     {
         $data = [
-            'videos' =>  Video::orderBy('id', 'DESC')->get()
+            'videos' =>  Video::orderBy('id')->get()
         ];
         return view('adm.pages.video.index', $data);
     }
@@ -28,8 +30,7 @@ class VideoController extends Controller
      */
     public function create()
     {
-        $data = ['videos' =>  Video::all()];
-        return view('adm.pages.video.create',$data);
+        return view('adm.pages.video.create');
     }
 
     /**
@@ -40,42 +41,45 @@ class VideoController extends Controller
      */
     public function store(Request $request)
     {
-        
-        $request->validate([
-            
-            'title' => 'required',
-        ]);
-
-        
-        $item_no = Video::orderBy('item_no')->first();
-
-        if($item_no){
-            $item_no =  $item_no->item_no + 1;
-        }else{
-            $item_no = 1;
-        }
-
-        if($request->status == null){
-            $status = 0;
-        }else{
+        // dd($request->status);
+        if ($request->status) {
             $status = 1;
+        } else {
+            $status = 0;
         }
-        $image_name = uploadImageThumb($request);
-        $video = new Video;
-        $video->title = $request->title;
-        $video->short_description = $request->short_description;
-        $video->video_date = $request->video_date;
-        $video->youtube_embed = $request->youtube_embed;
 
-        $video->status = 1;
-        $save = $video->save();
+       $video = new video;
+       $video->name = $request->name;
+       $video->short_description = $request->short_description;
+       $video->full_description = $request->full_description;
+       $video->slug=$request->slug;
+        
+       $video->meta_title  = $request->meta_title;
+       $video->meta_keyword  = $request->meta_keyword;
+       $video->meta_description  = $request->meta_description;
+       $video->status  = $status;
+       $save =$video->save();
 
-        if($save){
-            return back()->with('success', 'Video Added...');
-        }else{
+        if ($save) {
+            return (redirect(route('admin.manage-video', $video->id)))->with('success', 'Video Added...');
+        } else {
             return back()->with('fail', 'Something went wrong, try again later...');
         }
+
     }
+    public function manage_video($id)
+{
+    // $photoDetails = DB::table('media')->where(['media_id' => $id, 'image_type'=>'award'])->orderBy('item_no', 'ASC')->get();
+
+    $photoDetails = DB::table('media')->where(['media_id' => $id, 'image_type'=>'Video'])->orderBy('item_no', 'ASC')->get();
+
+    
+    $data = [
+        'video' => video::find($id),
+        'images' => $photoDetails,
+    ];
+    return view('adm.pages.video.manage-video',$data);
+}
 
     /**
      * Display the specified resource.
@@ -96,10 +100,17 @@ class VideoController extends Controller
      */
     public function edit($id)
     {
+        $video = video::find($id);
         $data = [
-            'video' =>  Video::find($id)
+            'video' =>  $video,
         ];
-        return view('adm.pages.video.edit', $data);
+
+        if ($video) {
+            return view('adm.pages.video.edit', $data);
+        } else {
+            return redirect(route('video.index'))->with('fail', 'video Not Available...');
+        }
+
     }
 
     /**
@@ -112,39 +123,34 @@ class VideoController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-
+            'name' => 'required',
+            'short_description' => 'required',
+            'full_description' => 'required',
+            'slug' => 'required',
         ]);
 
-        
-        $item_no = Video::orderBy('item_no')->first();
-
-        if($item_no){
-            $item_no =  $item_no->item_no + 1;
-        }else{
-            $item_no = 1;
-        }
-
-        if($request->status == null){
-            $status = 0;
-        }else{
+        if ($request->status) {
             $status = 1;
+        } else {
+            $status = 0;
         }
 
 
-        
-        $video =  Video::find($id);
-        $video->title = $request->title;
-        // $video->list_no = $request->list_no;
+        $video =  video::find($id);
+        $video->name = $request->name;
         $video->short_description = $request->short_description;
-        $video->video_date = $request->video_date;
-        $video->youtube_embed = $request->youtube_embed;
+        $video->full_description = $request->full_description;
+        $video->slug  = $request->slug;
+        $video->meta_title  = $request->meta_title;
+        $video->meta_keyword  = $request->meta_keyword;
+        $video->meta_description  = $request->meta_description;
+        $video->status  = $status;
 
-        $video->status = 1;
-        $save = $video->save();
+        $save =$video->save();
 
-        if($save){
-            return back()->with('success', 'Video Updated...');
-        }else{
+        if ($save) {
+            return redirect(route('video.index'))->with('success', 'video Reconization Updated...');
+        } else {
             return back()->with('fail', 'Something went wrong, try again later...');
         }
     }

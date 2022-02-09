@@ -16,6 +16,7 @@ class CreateTaskAssignTable extends Migration
         Schema::create('task_assign', function (Blueprint $table) {
             
             $table->id();
+            $table->text('item_no')->nullable();
             $table->text('note_no');
             $table->text('type');
             $table->longText('description')->nullable();

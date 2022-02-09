@@ -3,8 +3,15 @@
     <script src="{{url('sardar')}}/js/jquery-3.2.1.slim.min.js"></script>
     <script src="{{url('sardar')}}/js/popper.min.js"></script>
     <script src="{{url('sardar')}}/js/bootstrap.min.js"></script>
-  
+    <script src="{{url('sardar')}}/js/custom.js"></script>
+
   <script type="text/javascript" src="{{url('sardar')}}/js/slick.min.js"></script>
+
+
+  <script src="{{url('lightjs')}}/js/lightgallery.min.js"></script>
+  
+
+
   <script type="text/javascript">
   	$('.inflatables_slider').slick({
       arrows: true,
@@ -69,3 +76,29 @@
     });  
 
   </script>
+   
+   <script src="https://www.google.com/recaptcha/api.js?render=6LcXd3gcAAAAAFjV-qXl8MC8Cuu0e5JapyCXrxj1"></script>
+   <script>
+      function onClick(e) {
+        e.preventDefault();
+        grecaptcha.ready(function() {
+          grecaptcha.execute('6LcXd3gcAAAAAFjV-qXl8MC8Cuu0e5JapyCXrxj1', {action: 'submit'}).then(function(token) {
+              // Add your logic to submit to your backend server here.
+          });
+        });
+      }
+
+
+
+      
+  </script>
+
+
+
+
+<?php
+
+$footerCode = DB::table('custom_codes')->where('type', 'footer-code')->first();
+echo $footerCode->description;
+
+?>

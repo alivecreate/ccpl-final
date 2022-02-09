@@ -21,17 +21,30 @@ $(".page a").addClass( "active-menu");
 <div class="content-wrapper">
     <section class="content-header">
       <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Blog Page Manage</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
+
+      <div class="row">
+      
+      <div class="col-sm-6">
+            <ol class="breadcrumb ">
               <li class="breadcrumb-item"><a href="{{url('admin')}}">Home</a></li>
-              <li class="breadcrumb-item active">Blog Page Mange</li>
+              <li class="breadcrumb-item active">Blog Page Manage</li>
             </ol>
           </div>
+
+        
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+              <a class="btn btn-dark btn-sm ml-1" onclick="goBack()"> ❮ Back</a>
+              
+          </ol>
         </div>
+        <div class="row mb-2">
+          <div class="col-sm-12">
+            <h1>Blog Page Manage</h1>
+          </div>
+        </div>
+    </div>
+
       </div>
     </section>
 
@@ -58,20 +71,23 @@ $(".page a").addClass( "active-menu");
                   <div class="card-body p-2 pt-4">
 
                     <div class="form-group row">
-                      <div class="col-sm-12">
+                      <div class="col-sm-6">
                           <textarea id="summernote" name="description" placeholder="Blog Descriptions">
                           {{$pageData->description}}</textarea>
                           <span class="text-danger">@error('description') {{$message}} @enderror</span>
-                          </div>
-                      </div>
                       
-                      @include('adm.widget.seo-content')
+                          @include('adm.widget.seo-content')
+                      
+                        </div>
+
+                        @include('adm.widget.seo-content-2')
+                      
                     <input type="hidden" name="type" value="blog_page">               
                     </div>
                   </div>
 
                   <div class="card-footer text-right">
-                    <button type="submit" class="btn btn-info">Save Home About</button>
+                    <button type="submit" class="btn btn-info">Save Blog</button>
                   </div>
                 </form>
             </div>

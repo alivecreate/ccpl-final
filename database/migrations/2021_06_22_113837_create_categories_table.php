@@ -15,6 +15,7 @@ class CreateCategoriesTable extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
+            $table->text('item_no')->nullable();
             $table->text('name');
             $table->text('description')->nullable();
             $table->integer('parent_id')->default(0);
@@ -23,9 +24,16 @@ class CreateCategoriesTable extends Migration
             $table->text('image_alt')->nullable();
             $table->text('image_title')->nullable();
             $table->float('price')->nullable();
+
+            $table->text('type')->nullable();
             
             $table->text('slug')->nullable();
-
+            $table->text('search_index')->nullable();
+            $table->text('search_follow')->nullable();
+            $table->text('canonical_url')->nullable();
+            $table->text('youtube_embed')->nullable();
+            
+            
             $table->text('meta_title')->nullable();
             $table->longText('meta_keyword')->nullable();
             $table->longText('meta_description')->nullable();

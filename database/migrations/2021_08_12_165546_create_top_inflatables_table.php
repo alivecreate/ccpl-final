@@ -16,7 +16,7 @@ class CreateTopInflatablesTable extends Migration
         Schema::create('top_inflatables', function (Blueprint $table) {
             $table->id();
             $table->text('item_no')->nullable();
-            $table->text('item_id')->nullable()->unique();
+            $table->text('item_id', 255)->nullable();
             $table->text('image')->nullable();
             $table->text('title')->nullable();
             $table->text('type')->nullable();

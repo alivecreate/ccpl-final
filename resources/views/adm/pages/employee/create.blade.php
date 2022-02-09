@@ -123,10 +123,11 @@ $(".employee a").addClass( "active-menu");
                     </div>
                     
                     <div class="col-sm-6">
-                      <label for="image">ફોટો</label>
+                      <label for="image">Image</label>
                       <br>
                         <input type="file" name="image" 
-                          placeholder="ફોટો" value="{{old('image')}}">
+                          placeholder="Image" value="{{old('image')}}"
+                              accept="image/png,image/jpeg" />
                       <span class="text-danger">@error('image') {{$message}} @enderror</span>
                     </div>
                   </div>

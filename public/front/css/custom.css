@@ -1,0 +1,390 @@
+a {
+    color: #207f3b;
+}a:hover {
+    color: #0c4d1f;
+}
+body{
+    word-break: break-all;
+}
+.led-bulb-bg {
+    background-color: red;
+    animation-name: bulbAnimation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    border: 4px solid white;
+  }
+  @keyframes bulbAnimation {
+    0%   {background-color:#ba1111; border-top: 4px solid white ; box-shadow: 0px 0px 0px 1px #ba1111;}
+    25%   {background-color:rgb(168, 97, 226); border-right: 4px solid white ;  box-shadow: 0px 0px 0px 1px rgb(193, 130, 245)}
+    50%  {background-color:darkcyan; border-bottom: 4px solid white ;   box-shadow: 0px 0px 0px 1px darkcyan}
+    75%  {background-color:purple; border-left: 4px solid white ;  box-shadow: 0px 0px 0px 1px purple}
+    100% {background-color:green;  border-left: 4px solid white ;  box-shadow: 0px 0px 0px 1px}
+  }
+
+  .led.bg-size.blur-up.lazyloaded {
+    height: 80vh;
+}
+
+header {
+    background-color: #ffffff;
+    border-bottom: 1px solid silver;
+}
+.pixelstrap a, .pixelstrap a:hover, .pixelstrap a:active {
+    color: #222222;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 23px;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding-top: 28px;
+    padding-bottom: 28px;
+    letter-spacing: 0.07em;
+}
+
+.pixelstrap a .sub-arrow {
+    position: absolute;
+    top: 50%;
+    margin-top: -17px;
+    left: auto !important;
+    right: -5px !important;
+    width: 34px;
+    height: 34px;
+    overflow: hidden;
+    font: bold 16px/34px monospace !important;
+    text-align: center !important;
+    text-shadow: none;
+    border-radius: 4px;
+}
+
+.product-list-home ul {
+    min-height: 160px;
+}
+.product-wrap{
+    width: 100%;
+}
+
+.brand-logo img {
+    width: 210px;
+}
+.header-contact a {
+    color:   #f2ecc4;
+  }
+.product-detail-title {
+    color: #216935;
+}
+.product-box.product-wrap img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+.btn-dark:hover {
+    background: white;
+    color: black;
+}
+
+.product-list-home {
+    background: white;
+}
+
+  .product_banner{
+    
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+    border: 1px solid #c8c8c8;
+    padding: 2px;
+  }
+  .product_list ul li a {
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+  .banner-primary-color {
+    background: #e8fbed;
+    box-shadow: 0pt 0pt 3pt 0pt #020603;
+}
+.bg-light-color{
+    background: url('../images/website-bg1.jpeg');
+    background-position: left;
+}
+.dark .bg-light-color {
+    background: url('../images/ccpl/led-background-dark.webp');
+    background-position: left;
+    background-size: 100%;
+}
+.dark .product-wrap .product-detail {
+    background-color: #0000007a !important;
+
+    box-shadow: 0pt 2pt 2pt 0pt black;
+}
+.dark .product-wrap  {
+    box-shadow: 0pt 2pt 2pt 0pt black;
+}
+
+.top-header.top-header-dark2 .header-dropdown li a i {
+    font-size: 16px;
+    color: #ffffff;
+}
+
+a.activeTab {
+    color: green;
+}
+
+  .text-style1 p{
+    font-size: 14px;
+    color: #545454;
+  }
+
+  .pixelstrap .sm-nowrap > li > a, .pixelstrap .sm-nowrap > li > :not(ul) a {
+    white-space: pre-line;
+    text-transform: capitalize !important;
+}
+.product_list ul li{
+
+}
+
+.collection-filter-block {
+    border: 1px solid #e0cca6;
+}
+
+.product_list ul li {
+    width: 100%;
+    padding: 4px 0px;
+    border-bottom: 1px solid #d1d1d1;
+}
+  .top-banner-wrapper .top-banner-content h4 {
+    font-weight: 600;
+    color: #462d0a;
+    margin-bottom: 15px;
+}
+.my_top_content p {
+    font-size: 20px !important;
+    color: #525050 !important;
+}
+.my_top_content h2 {
+    color: #2d2c2c !important;
+    text-transform: capitalize;
+    word-spacing: 5px;
+}
+
+.product-wrap .product-detail {
+    background-color: #249d46 !important;
+    padding: 8px;
+    margin-bottom: 1px;
+    text-align: center;
+    background-color: #249d46 !important;
+    margin: 0px;
+}
+.product-wrap {
+    display: inline-block;
+    border: none;
+    border-radius: 1px;
+    overflow: hidden;
+    box-shadow: 0pt 2pt 2pt 0pt silver;
+    border-radius: 12px;
+    padding: 0px !important;
+    overflow: hidden;
+}.dark a {
+    color: white;
+}
+.dark .btn-solid {
+    color: #000000 !important;
+}
+.dark .btn-dark {
+    color: white;
+}
+.dark .product-list-home ul li a {
+    color: black;
+}
+.dark .btn-dark:hover {
+    color: black;
+}
+.product-wrap:hover {
+    box-shadow: 0pt 6pt 5pt 0pt #a09898;
+    background: #ebefec;
+}
+.dark .product-wrap:hover {
+    box-shadow: 0pt 7pt 10pt 0pt #000000;
+    background: #000000a6;
+}
+.dark .portfolio-section .filter-button.active,.dark  .tab-title li.current{
+    background: #0000008a;
+}
+.dark .portfolio-section .filter-button.active,.dark  .tab-title li.current{
+    background: black;
+}
+.dark .title1 h4 {
+    color: #e7eaec;
+    line-height: 1.6;
+}
+.product_list ul{
+    list-style-type: circle;
+    list-style-position: inside;
+}
+
+.product_list ul li{
+    display: list-item;
+    color: #066d34;
+    list-style-type: disclosure-closed;
+}
+
+li.top-link a:hover {
+    color: #066d34;
+}
+.main-menu .pixelstrap li a {
+    font-size: 17px;
+    font-weight: 600;
+    padding: 0px 16px;
+    /* border: 2px solid white; */
+}
+
+
+/* .top-level-menu .pixelstrap .top-link a:hover{
+color: white;
+background: #009d46;
+border: 2px solid #07552a;
+border-radius: 5px;
+} */
+
+ul#sm-16387724975211013-4 {
+    min-width: 20em;
+}
+
+.full-mega-menu {
+    border-bottom: 4px solid #009d46 !important;
+}
+.product-big-slider{
+display: block;
+margin: 0 auto;
+height: 304px;
+}
+.pixelstrap ul li {
+    margin-bottom: 12px;
+}
+.product-list-home ul{
+    display: block;
+    padding: 16px;
+}
+.header-bg1{
+ background-image: url('http://localhost:8000/front/images/ccpl/ccpl-2.jpg');
+ display: block;
+ background-position: 0px 162px;
+ background-size: 100%;
+ background-repeat: no-repeat;
+}
+.header-contactus{
+ background-image: url('http://localhost:8000/front/images/ccpl/contact-map.png');
+ display: block;
+ background-position: top;
+ background-size: 100%;
+}
+
+.header-bank-detail{
+    background-image: url('http://localhost:8000/front/images/ccpl/bank-detail.jpeg');
+    display: block;
+    background-position: top;
+    background-size: 100%;
+   }
+
+   .header-service{
+    background-image: url('http://localhost:8000/front/images/ccpl/service-header.jpg');
+    display: block;
+    background-position: top;
+    background-size: 100%;
+   }
+   .header-legal{
+    background-image: url('http://localhost:8000/front/images/ccpl/legal-header.jpeg');
+    display: block;
+    background-position: top;
+    background-size: 100%;
+   }
+   .header-award{
+    background-image: url('http://localhost:8000/front/images/ccpl/award-header.jpeg');
+    display: block;
+    background-position: 0px -124px;
+    background-size: 100%;
+   }
+   .header-infrastructure{
+    background-image: url('http://localhost:8000/front/images/ccpl/infrastructure-header.jpeg');
+    display: block;
+    background-size: 100%;
+   }
+   .header-video{
+    background-image: url('http://localhost:8000/front/images/ccpl/header-video.png');
+    display: block;
+    background-size: 100%;
+
+    background-position: 0px 0px;
+   }
+   
+.product-list-home ul li {
+    display: block;
+    padding: 3px ​14p;
+}
+
+.product-list-home ul li a{
+    font-size: 17px;
+    text-transform: uppercase;
+    line-height: 1.7;
+}
+
+.title-style1 {
+    text-align: left;
+    background: #241064;
+    float: left;
+    padding: 0px 15px;
+    color: white;
+    border-top-right-radius: 26px;
+}
+.pixelstrap .link-section h5 {
+    font-weight: 700;
+    text-transform: capitalize;
+    font-size: 17px;
+    /* text-decoration: underline; */
+    color: white;
+    background: #5f6361;
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+.dark .pixelstrap .link-section h5 {
+    font-weight: 700;
+    text-transform: capitalize;
+    font-size: 17px;
+    color: white;
+    background: #0ea250;
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+.pixelstrap .mega ul{
+
+    width: 100% !important;
+}
+ul#main-menu li ul {
+    /* width: 100% !important; */
+    
+}
+ul#main-menu li ul a{
+    /* width: 100% !important; */
+    font-size: 17px;
+    
+}
+.contact-page .theme-form input,
+.contact-page .theme-form textarea{
+    font-size: 16px;
+}
+
+.product_title{
+    color: white;
+    font-size: 18px;
+    margin-bottom: 0px;
+    text-transform: uppercase;
+}
+
+.collection-product-wrapper .product-wrapper-grid .product-box {
+    padding: 0px;
+    margin: 0px;
+    
+}
+.collection-product-wrapper .product-wrapper-grid .product-box:hover {
+
+}

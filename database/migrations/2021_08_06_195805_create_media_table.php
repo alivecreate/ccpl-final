@@ -21,6 +21,7 @@ class CreateMediaTable extends Migration
             $table->string('image_title',256)->nullable();
             $table->longText('image_description',256)->nullable();
             $table->string('image',256)->nullable();
+            $table->longText('youtube_embed')->nullable();
             
             
             $table->unsignedBigInteger('admin_id')->nullable();

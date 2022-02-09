@@ -120,8 +120,10 @@ $(".employee a").addClass( "active-menu");
                       <label for="image">ફોટો</label>
                       <br>
                         <input type="file" name="image" 
+                        accept="image/png,image/jpeg"
                           placeholder="ફોટો" value="{{old('image')}}">
-                          <input type="hidden" name="old_image" value="{{$employee->image}}">
+                          <input type="hidden" name="old_image" value="{{$employee->image}}"
+                              accept="image/png,image/jpeg" />
                           <br>
                         @if($employee->image)
                           <img class="img-circle elevation-2 object-fit-sm" 

@@ -16,6 +16,9 @@ class CreateBlogsTable extends Migration
         Schema::create('blogs', function (Blueprint $table) {
             $table->id();
             $table->text('image')->nullable();
+
+            $table->text('image_alt')->nullable();
+            $table->text('image_title')->nullable();
             $table->text('title')->nullable();
             $table->text('short_description')->nullable();
             $table->longText('full_description')->nullable();
@@ -25,6 +28,13 @@ class CreateBlogsTable extends Migration
             $table->text('meta_title')->nullable();
             $table->text('meta_keyword')->nullable();
             $table->longText('meta_description')->nullable();
+
+
+            $table->text('search_index')->nullable();
+            $table->text('search_follow')->nullable();
+            $table->text('canonical_url')->nullable();
+
+
             $table->integer('status')->default(0);
 
             $table->timestamps();

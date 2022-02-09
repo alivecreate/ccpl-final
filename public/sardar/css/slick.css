@@ -79,7 +79,6 @@
     display: none;
     float: left;
 
-    height: 100%;
     min-height: 1px;
 }
 [dir='rtl'] .slick-slide
@@ -101,7 +100,10 @@
 .slick-initialized .slick-slide
 {
     display: block;
+
+    margin: 0px 17px;
 }
+
 .slick-loading .slick-slide
 {
     visibility: hidden;

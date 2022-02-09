@@ -90,7 +90,9 @@ $(".topInflatable a").addClass( "active-menu");
                 <div class="form-group row">
                     <div class="col-sm-12">
                     <input type="file" class="" 
-                      name="image" placeholder="Upload Image">
+                      name="image" placeholder="Upload Image"
+                      accept="image/png,image/jpeg"
+                      >
                       </div>
                   </div>
 
